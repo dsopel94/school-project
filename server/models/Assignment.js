@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const AssignmentSchema = mongoose.Schema({
   name: String,
@@ -8,4 +8,4 @@ const AssignmentSchema = mongoose.Schema({
 
 const Assignment = mongoose.model('Assignment', AssignmentSchema);
 
-module.exports = Assignment;
+export default Assignment;

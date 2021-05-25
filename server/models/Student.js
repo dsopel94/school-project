@@ -1,12 +1,15 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import Assignment from './Assignment.js';
+import Course from './Course.js'
 
 const StudentSchema = mongoose.Schema({
   name: String,
   phoneNumber: String,
   address: String,
-  assignments: [{type: Schema.Types.ObjectId, ref: 'Assignment'}],
-  courses: [{type: Schema.Types.ObjectId, ref: 'Course'}]
+  assignments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Assignment'}],
+  courses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
 })
 
+const Student = mongoose.model('Student', StudentSchema);
 
-module.exports = Student;
+export default Student;
